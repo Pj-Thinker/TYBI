@@ -1,6 +1,7 @@
 export interface CompatibilityItem {
   icon: string;
   title: string;
+  // img?: string;
   url: string;
 }
 

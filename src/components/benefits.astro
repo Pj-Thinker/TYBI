@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const benefits: Array<FeatureItem> = [
+  {
+    title: "Retail",
+    description:
+      "BI enables tracking sales data and trend analysis, aiding inventory, pricing, and marketing decisions for retail companies.",
+    icon: "fluent:building-retail-20-filled",
+  },
+  {
+    title: "Manufacturing",
+    description:
+      "BI enhances manufacturing efficiency by analyzing production data to identify and address bottlenecks and inefficiencies, leading to cost savings.",
+    icon: "mdi:gear",
+  },
+  {
+    title: "Financial services",
+    description:
+      "Financial services leverage data analytics to track customer insights, identify trends, and drive product innovation, targeted marketing, and risk reduction.",
+    icon: "mdi:finance",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "Healthcare organizations harness data analytics for patient data tracking, enabling enhanced care, cost reduction, and innovative treatment development.",
+    icon: "healthicons:health",
+  },
+  {
+    title: "Education",
+    description:
+      "Education institutions employ BI for tracking student performance trends, enhancing instruction, identifying students in need, and optimizing resource allocation.",
+    icon: "zondicons:education",
+  },
+  {
+    title: "Government",
+    description:
+      "Government agencies harness BI for tracking program performance trends, driving program improvement, resource allocation optimization, and waste reduction.",
+    icon: "map:local-government",
+  },
+];
+---
+
+<ContentSection title="Benefits" id="benefits">
+  <Fragment slot="lead">
+    BI serves companies of all sizes,
+    <span class="text-primary"> offering versatile tools</span>
+
+     to match specific needs and budgets.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      benefits.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
